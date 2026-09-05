@@ -145,7 +145,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--cyan); outline-
 .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 4rem; }
 .project { --accent: var(--cyan); display: flex; min-height: 700px; overflow: hidden; border-radius: 1.1rem; flex-direction: column; transform-style: preserve-3d; transition: transform .2s ease-out, border-color .25s; }
 .project:hover { border-color: color-mix(in srgb, var(--accent) 36%, transparent); }
-.project-violet { --accent: var(--violet); }.project-amber { --accent: var(--amber); }
+.project-violet { --accent: var(--violet); }.project-amber { --accent: var(--amber); }.project-green { --accent: #8ee68b; }
 .project-featured { grid-column: 1/-1; min-height: 585px; flex-direction: row; }
 .project-media { position: relative; min-height: 310px; overflow: hidden; border-bottom: 1px solid rgba(143,202,255,.1); background: radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--accent) 11%, transparent), transparent 60%), #050c1c; }
 .project-featured .project-media { width: 55%; min-height: 585px; border-right: 1px solid rgba(143,202,255,.1); border-bottom: 0; }

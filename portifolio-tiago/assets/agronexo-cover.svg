@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">AgroNexo — inteligência agroclimática</title>
+  <desc id="desc">Capa do projeto com indicadores de clima, agricultura e solo conectados ao Índice de Prioridade Agroclimática.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071827"/>
+      <stop offset="1" stop-color="#0b302d"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#35d6c1"/>
+      <stop offset="1" stop-color="#a8df73"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#d7fff6" stroke-opacity=".055"/>
+    </pattern>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" rx="28" fill="url(#bg)"/>
+  <rect width="1200" height="630" rx="28" fill="url(#grid)"/>
+  <circle cx="1010" cy="78" r="180" fill="#21c7ad" opacity=".07" filter="url(#glow)"/>
+
+  <g transform="translate(72 72)">
+    <text x="0" y="0" fill="#8ce8d9" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="4">DATA ANALYTICS · POWER BI · SUSTENTABILIDADE</text>
+    <text x="0" y="92" fill="#f6fffc" font-family="Arial, sans-serif" font-size="72" font-weight="750">AgroNexo</text>
+    <text x="0" y="144" fill="#bbd8d3" font-family="Arial, sans-serif" font-size="28">Inteligência agroclimática para priorizar análises</text>
+
+    <g transform="translate(0 205)">
+      <rect width="250" height="116" rx="18" fill="#0d2936" stroke="#2f5d64"/>
+      <text x="24" y="34" fill="#69dccc" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="2">CLIMA</text>
+      <text x="24" y="72" fill="#f6fffc" font-family="Arial, sans-serif" font-size="22" font-weight="700">NASA POWER</text>
+      <text x="24" y="97" fill="#91aaa8" font-family="Arial, sans-serif" font-size="15">chuva · temperatura</text>
+    </g>
+    <g transform="translate(270 205)">
+      <rect width="250" height="116" rx="18" fill="#0d2936" stroke="#2f5d64"/>
+      <text x="24" y="34" fill="#a8df73" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="2">TERRITÓRIO</text>
+      <text x="24" y="72" fill="#f6fffc" font-family="Arial, sans-serif" font-size="22" font-weight="700">MapBiomas</text>
+      <text x="24" y="97" fill="#91aaa8" font-family="Arial, sans-serif" font-size="15">agricultura · solo</text>
+    </g>
+
+    <g transform="translate(0 350)">
+      <text x="0" y="0" fill="#819a9a" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="2">PILOTO</text>
+      <text x="0" y="42" fill="#f6fffc" font-family="Arial, sans-serif" font-size="28" font-weight="700">50 municípios · 2020—2023</text>
+      <text x="0" y="78" fill="#a9c0bd" font-family="Arial, sans-serif" font-size="18">Centro-Oeste brasileiro</text>
+    </g>
+  </g>
+
+  <g transform="translate(785 142)">
+    <circle cx="150" cy="150" r="145" fill="#0a212e" stroke="#2b5c62" stroke-width="2"/>
+    <circle cx="150" cy="150" r="114" fill="none" stroke="#75e5d3" stroke-opacity=".2" stroke-width="22"/>
+    <path d="M150 36a114 114 0 0 1 108 78" fill="none" stroke="url(#accent)" stroke-width="22" stroke-linecap="round"/>
+    <text x="150" y="126" text-anchor="middle" fill="#7de7d6" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="3">IPA</text>
+    <text x="150" y="175" text-anchor="middle" fill="#f7fffc" font-family="Arial, sans-serif" font-size="46" font-weight="750">0—100</text>
+    <text x="150" y="208" text-anchor="middle" fill="#9bb5b2" font-family="Arial, sans-serif" font-size="15">índice exploratório</text>
+
+    <g fill="#8ce8d9">
+      <circle cx="17" cy="82" r="5"/><circle cx="284" cy="100" r="5"/>
+      <circle cx="53" cy="273" r="5"/><circle cx="246" cy="286" r="5"/>
+    </g>
+    <g stroke="#8ce8d9" stroke-opacity=".34">
+      <path d="M17 82L62 105"/><path d="M284 100L256 118"/>
+      <path d="M53 273L78 244"/><path d="M246 286L225 253"/>
+    </g>
+  </g>
+
+  <rect x="72" y="576" width="1056" height="2" fill="url(#accent)" opacity=".7"/>
+  <text x="72" y="608" fill="#829d9a" font-family="Arial, sans-serif" font-size="14" letter-spacing="2">DADOS PÚBLICOS · METODOLOGIA DOCUMENTADA · APOIO À DECISÃO</text>
+</svg>

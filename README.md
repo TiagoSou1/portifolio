@@ -6,7 +6,7 @@ Portfólio profissional de Tiago Sousa Leite, com foco em People Analytics, Data
 
 - Experiência interativa com visualização 3D em Canvas e efeitos de vidro.
 - Layout responsivo, acessível e sem dependências de JavaScript externas.
-- Projetos de forecasting, NLP e aplicação com banco de dados.
+- Projetos de forecasting, sustentabilidade, NLP e customer intelligence.
 - Metadados sociais, dados estruturados e configuração pronta para Netlify.
 
 ## Publicação
