@@ -1,536 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tiago Sousa Leite - Cientista de Dados</title>
-    <style>
-        .profile-img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover; /* corta a imagem proporcionalmente */
-    border-radius: 50%; /* deixa redonda */
-    border: 4px solid #4a9eff; /* mesma borda azul do tema */
-    box-shadow: 0 0 15px rgba(74, 158, 255, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#030714" />
+    <meta name="description" content="Portfólio de Tiago Sousa Leite: People Analytics, Data Science, Python, SQL, Power BI e projetos aplicados." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content="Tiago Sousa Leite | Pessoas, dados e decisões" />
+    <meta property="og:description" content="People Analytics e Ciência de Dados com contexto, clareza e impacto." />
+    <meta property="og:url" content="https://portifolio-tiago-sousa.netlify.app/" />
+    <meta property="og:image" content="https://portifolio-tiago-sousa.netlify.app/assets/og.jpg" />
+    <link rel="canonical" href="https://portifolio-tiago-sousa.netlify.app/" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Tiago Sousa Leite | Pessoas, dados e decisões</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Tiago Sousa Leite",
+        "url": "https://portifolio-tiago-sousa.netlify.app/",
+        "image": "https://portifolio-tiago-sousa.netlify.app/assets/tiago-sousa.jpg",
+        "jobTitle": "Jovem Aprendiz de People Analytics",
+        "worksFor": { "@type": "Organization", "name": "Movecta" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "FIAP" },
+        "sameAs": ["https://www.linkedin.com/in/tiago-sousa-leite/", "https://github.com/TiagoSou1"],
+        "knowsAbout": ["People Analytics", "Data Analytics", "Power BI", "Python", "SQL", "Data Science"]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="ambient ambient-a" aria-hidden="true"></div>
+    <div class="ambient ambient-b" aria-hidden="true"></div>
 
-.profile-img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(74, 158, 255, 0.6);
-}
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #e0e0e0;
-            background: #0a0a0a;
-        }
-
-        header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
-            opacity: 0.3;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        header p {
-            font-size: 1.3rem;
-            opacity: 0.95;
-            position: relative;
-            z-index: 1;
-        }
-
-        .social-links {
-            margin-top: 1.5rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .social-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-size: 1.1rem;
-            padding: 0.5rem 1.5rem;
-            border: 2px solid white;
-            border-radius: 25px;
-            display: inline-block;
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background: white;
-            color: #0f3460;
-            transform: translateY(-3px);
-        }
-
-        nav {
-            background: #1a1a1a;
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-            z-index: 100;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: #4a9eff;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #7b68ee;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        section {
-            background: #1a1a1a;
-            margin: 2rem 0;
-            padding: 3rem 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            border: 1px solid #2a2a2a;
-        }
-
-        h2 {
-            color: #4a9eff;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, #4a9eff, #7b68ee);
-            border-radius: 2px;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-image {
-            text-align: center;
-        }
-
-        .profile-placeholder {
-            width: 200px;
-            height: 200px;
-            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
-            border-radius: 50%;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            color: white;
-            font-weight: bold;
-            border: 4px solid #4a9eff;
-        }
-
-        .about-text p {
-            margin-bottom: 1rem;
-            text-align: justify;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .project-card {
-            border: 2px solid #2a2a2a;
-            border-radius: 10px;
-            padding: 2rem;
-            transition: all 0.3s;
-            background: #141414;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(74, 158, 255, 0.3);
-            border-color: #4a9eff;
-        }
-
-        .project-card h3 {
-            color: #4a9eff;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .project-card ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .project-card li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .project-card li::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            color: #7b68ee;
-            font-weight: bold;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .skill-category h3 {
-            color: #7b68ee;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .skill-item {
-            background: #0f3460;
-            padding: 0.8rem 1.2rem;
-            border-radius: 25px;
-            display: inline-block;
-            margin: 0.3rem;
-            font-size: 0.95rem;
-            border: 2px solid transparent;
-            transition: all 0.3s;
-            color: #e0e0e0;
-        }
-
-        .skill-item:hover {
-            background: #4a9eff;
-            color: white;
-            border-color: #4a9eff;
-            transform: scale(1.05);
-        }
-
-        .education-item {
-            border-left: 4px solid #4a9eff;
-            padding-left: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .education-item h3 {
-            color: #4a9eff;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .education-item .year {
-            color: #7b68ee;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-info {
-            text-align: center;
-            font-size: 1.2rem;
-        }
-
-        .contact-info a {
-            color: #4a9eff;
-            text-decoration: none;
-            margin: 0 1rem;
-            transition: color 0.3s;
-        }
-
-        .contact-info a:hover {
-            color: #7b68ee;
-        }
-
-        footer {
-            background: #0f0f0f;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-            border-top: 2px solid #2a2a2a;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-
-            header p {
-                font-size: 1.1rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            nav ul {
-                gap: 1rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Tiago Sousa Leite</h1>
-        <p>Cientista de Dados | Análise de Dados | Machine Learning</p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/tiago-sousa-leite/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/TiagoSou1" target="_blank">GitHub</a>
-            <a href="mailto:tsousal177@email.com">Email</a>
-        </div>
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="#inicio" aria-label="Tiago Sousa — início">
+          <span class="brand-code">TS<span>/</span>DS</span>
+          <span class="brand-copy"><strong>Tiago Sousa</strong><small>People · Data · Direction</small></span>
+        </a>
+        <nav class="desktop-nav" aria-label="Navegação principal">
+          <a href="#sobre">Sobre</a><a href="#experiencia">Experiência</a><a href="#projetos">Projetos</a><a href="#stack">Stack</a><a href="#formacao">Formação</a>
+        </nav>
+        <a class="nav-cta" href="#contato">Contato <span>↗</span></a>
+        <button class="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-button><span></span><span></span></button>
+      </div>
+      <nav class="mobile-nav" aria-label="Navegação móvel" data-mobile-nav>
+        <a href="#sobre">Sobre</a><a href="#experiencia">Experiência</a><a href="#projetos">Projetos</a><a href="#stack">Stack</a><a href="#formacao">Formação</a><a href="#contato">Contato</a>
+      </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#projetos">Projetos</a></li>
-            <li><a href="#habilidades">Habilidades</a></li>
-            <li><a href="#formacao">Formação</a></li>
-            <li><a href="#contato">Contato</a></li>
-        </ul>
-    </nav>
+    <main id="inicio">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="data-grid" aria-hidden="true"></div>
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow"><i></i> People Analytics · Data Science</p>
+            <h1 id="hero-title">Eu conecto <em>pessoas</em>, dados e decisões.</h1>
+            <p class="hero-intro">Sou Tiago Sousa. Transformo perguntas de negócio em análises claras, indicadores confiáveis e experiências de dados que ajudam pessoas a decidir melhor.</p>
+            <div class="hero-actions"><a class="button button-primary" href="#projetos">Explorar projetos <span>↘</span></a><a class="button button-ghost" href="#contato">Vamos conversar <span>→</span></a></div>
+            <dl class="hero-facts glass">
+              <div><dt>Agora</dt><dd>People Analytics</dd><span>Movecta</span></div>
+              <div><dt>Em evolução</dt><dd>Ciência de Dados</dd><span>FIAP</span></div>
+              <div><dt>Minha base</dt><dd>Python · SQL · BI</dd><span>Dados com contexto</span></div>
+            </dl>
+          </div>
 
-    <div class="container">
-        <section id="sobre">
-            <h2>Sobre Mim</h2>
-            <div class="about-content">
-                <div class="about-image">
-                     <img src="profile-img.jpg" alt="Foto de Tiago Sousa Leite" class="profile-img">
-                </div>
+          <div class="hero-stage reveal" data-stage aria-label="Retrato de Tiago Sousa cercado por uma visualização interativa de dados">
+            <canvas class="signal-sphere" data-sphere aria-hidden="true"></canvas><div class="stage-aura" aria-hidden="true"></div>
+            <article class="portrait-card glass" data-tilt>
+              <div class="portrait-window"><img src="assets/tiago-sousa.jpg" alt="Tiago Sousa sentado no escritório da Movecta" width="800" height="800" fetchpriority="high" /><div class="portrait-scan" aria-hidden="true"></div></div>
+              <div class="portrait-caption"><div><span>TIAGO.SOUSA</span><strong>People Analytics</strong></div><p><i></i> disponível para conexões</p></div>
+            </article>
+            <div class="floating-signal signal-one glass"><span>01 / PESSOAS</span><strong>Contexto humano</strong></div>
+            <div class="floating-signal signal-two glass"><span>02 / DADOS</span><strong>Evidência clara</strong></div>
+            <div class="floating-signal signal-three glass"><span>03 / DIREÇÃO</span><strong>Decisão melhor</strong></div>
+            <p class="stage-hint">mova o cursor para explorar</p>
+          </div>
+        </div>
+      </section>
 
-                <div class="about-text">
-                    <p>Olá! Sou estudante de Ciência de Dados na FIAP, com previsão de formatura em dezembro de 2026. Apaixonado por análise de dados, aprendizado de máquina e desenvolvimento de soluções baseadas em dados.</p>
-                    <p>Tenho experiência prática em Python, SQL e bancos de dados, sempre buscando aplicar conhecimentos em projetos que envolvam coleta, tratamento, modelagem e visualização de dados para gerar insights estratégicos e soluções de alto impacto.</p>
-                    <p>Proativo, autodidata e orientado a resultados, estou em busca de oportunidades de estágio para aplicar e expandir meus conhecimentos em ambientes desafiadores e colaborativos.</p>
-                </div>
-            </div>
-        </section>
+      <div id="conteudo">
+        <section class="metrics" aria-label="Indicadores do portfólio"><div class="container metrics-grid">
+          <article><span>01</span><strong>97,31%</strong><p>acurácia no classificador de spam</p></article><article><span>02</span><strong>3 meses</strong><p>de horizonte no case de forecasting</p></article><article><span>03</span><strong>3 cases</strong><p>públicos, documentados e reproduzíveis</p></article><article><span>04</span><strong>1 princípio</strong><p>tecnologia só faz sentido com contexto</p></article>
+        </div></section>
 
-        <section id="projetos">
-            <h2>Projetos em Destaque</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3> Challenge ClickBus</h3>
-                    <p><strong>Projeto acadêmico FIAP (2025)</strong></p>
-                    <ul>
-                        <li>Dashboard interativo para análise de clientes</li>
-                        <li>Segmentação de clientes e identificação de padrões de comportamento</li>
-                        <li>Desenvolvimento de predições para tomada de decisão estratégica</li>
-                    </ul>
-                    <a href="https://github.com/TiagoSou1/ClickBus-ZyData" target="_blank" style="display: inline-block; margin-top: 1rem; color: #4a9eff; text-decoration: none; font-weight: bold;">Ver no GitHub →</a>
-                </div>
+        <section id="sobre" class="section"><div class="container split-section reveal">
+          <header class="section-heading"><p class="section-kicker">Minha perspectiva <span>01</span></p><h2>Antes do modelo, vem a pergunta certa.</h2></header>
+          <article class="about-panel glass"><p class="lead">Minha trajetória acontece na interseção entre a realidade das pessoas, a lógica dos dados e o ritmo do negócio.</p><p>Na Movecta, participo da organização, análise e governança de informações de Gente & Gestão. Na FIAP, aprofundo programação, estatística, bancos de dados e Machine Learning por meio de projetos aplicados.</p><p>Gosto de construir soluções que possam ser explicadas: bases rastreáveis, métricas honestas, visualizações que orientam e código que outra pessoa consegue executar.</p><div class="principles"><div><span>ENTENDER</span><h3>Contexto primeiro</h3><p>Transformar uma necessidade real em uma pergunta clara e mensurável.</p></div><div><span>ESTRUTURAR</span><h3>Dado confiável</h3><p>Organizar fontes, critérios e processos para análises consistentes.</p></div><div><span>COMUNICAR</span><h3>Direção prática</h3><p>Traduzir achados técnicos em uma leitura útil para a decisão.</p></div></div></article>
+        </div></section>
 
-                <div class="project-card">
-                    <h3> Detecção de Spam</h3>
-                    <p><strong>Projeto acadêmico (2025)</strong></p>
-                    <ul>
-                        <li>Pré-processamento de textos: remoção de stopwords, URLs e tokenização</li>
-                        <li>Vetorização com TF-IDF e avaliação com matriz de confusão</li>
-                        <li>Testes com mensagens do mundo real e análise de confiança das predições</li>
-                    </ul>
-                </div>
+        <section id="experiencia" class="section section-alt"><div class="container reveal">
+          <header class="section-heading wide"><p class="section-kicker">Experiência <span>02</span></p><h2>Dados de pessoas no contexto real da operação.</h2><p>Uma atuação orientada por qualidade, confidencialidade e utilidade para Gente & Gestão.</p></header>
+          <article class="experience glass"><header class="console-bar"><div><i></i><i></i><i></i></div><span>EXPERIENCE / MOVECTA / 2026—NOW</span><strong>STATUS · ACTIVE</strong></header><div class="experience-grid"><div class="role"><span>PEOPLE.DATA / 001</span><p>Movecta</p><h3>Jovem Aprendiz de People Analytics</h3><small>São Paulo · modelo híbrido</small></div><div><p class="experience-intro">Apoio à estruturação, análise e governança de dados de pessoas para gerar indicadores mais confiáveis e apoiar decisões da área.</p><ol class="experience-list"><li><span>01</span>Construção e acompanhamento de indicadores de pessoas.</li><li><span>02</span>Tratamento, consolidação e validação de bases.</li><li><span>03</span>Desenvolvimento e evolução de dashboards em Power BI.</li><li><span>04</span>Documentação de fontes, critérios e fluxos de validação.</li><li><span>05</span>Organização e centralização de informações com SharePoint.</li><li><span>06</span>Contato com Headcount, Turnover, Absenteísmo e Banco de Horas.</li></ol></div></div></article>
+        </div></section>
 
-                <div class="project-card">
-                    <h3> Sistema de Gestão Oracle</h3>
-                    <p><strong>Projeto acadêmico (2025)</strong></p>
-                    <ul>
-                        <li>CRUD completo para Funcionários, Cargos e Professores em Python + Oracle</li>
-                        <li>Relatórios analíticos e consultas complexas em SQL</li>
-                        <li>Integração de banco de dados e automação de processos</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+        <section id="projetos" class="section"><div class="container reveal">
+          <header class="section-heading wide"><p class="section-kicker">Projetos selecionados <span>03</span></p><h2>Cases que mostram raciocínio, não só ferramentas.</h2><p>Três entregas públicas com problema, método, resultado e documentação — do forecasting à aplicação web.</p></header>
+          <div class="projects">
+            <article class="project project-featured glass project-cyan" data-project-card><div class="project-media"><img src="assets/retail-forecast.svg" alt="Gráfico de validação temporal do projeto de previsão de demanda" loading="lazy" /><span class="project-label">Forecasting · Série temporal</span><div class="project-metric"><strong>3 meses</strong><span>horizonte previsto</span></div></div><div class="project-copy"><p class="project-index">CASE <span>/ 01</span></p><h3>Retail Demand Forecasting</h3><p>Case de previsão mensal de demanda que combina validação cronológica, comparação com baselines e uma leitura honesta da incerteza.</p><div class="project-details"><div><span>DESAFIO</span><p>Projetar a demanda futura sem deixar informações do futuro contaminarem a avaliação.</p></div><div><span>SOLUÇÃO</span><p>Prophet, divisão temporal, baselines ingênuos e métricas complementares.</p></div><div><span>RESULTADO</span><p>Previsão de três meses com MAE de 6,61 e limitações documentadas.</p></div></div><ul class="tags"><li>Python</li><li>Pandas</li><li>Prophet</li><li>Jupyter</li></ul><a class="project-link" href="https://github.com/TiagoSou1/retail-demand-forecasting" target="_blank" rel="noreferrer">Ver repositório <span>↗</span></a></div></article>
+            <article class="project glass project-violet" data-project-card><div class="project-media"><img src="assets/spam-matrix.svg" alt="Matriz de confusão do classificador de spam" loading="lazy" /><span class="project-label">NLP · Classificação</span><div class="project-metric"><strong>97,31%</strong><span>acurácia validada</span></div></div><div class="project-copy"><p class="project-index">CASE <span>/ 02</span></p><h3>Detector de Spam com NLP</h3><p>Pipeline reproduzível para classificar mensagens SMS como spam ou legítimas, da limpeza do texto à avaliação do erro.</p><div class="project-details compact"><div><span>SOLUÇÃO</span><p>TF-IDF, Multinomial Naive Bayes e divisão estratificada.</p></div><div><span>RESULTADO</span><p>Precisão de 98,37% para spam, com erros explicitamente apresentados.</p></div></div><ul class="tags"><li>Python</li><li>scikit-learn</li><li>TF-IDF</li></ul><a class="project-link" href="https://github.com/TiagoSou1/Detector-de-Spam" target="_blank" rel="noreferrer">Ver repositório <span>↗</span></a></div></article>
+            <article class="project glass project-amber" data-project-card><div class="project-media cover"><img src="assets/investimentos.png" alt="Interface do sistema de gestão de investimentos" loading="lazy" /><span class="project-label">Aplicação · Banco de dados</span><div class="project-metric"><strong>200 OK</strong><span>health check local</span></div></div><div class="project-copy"><p class="project-index">CASE <span>/ 03</span></p><h3>CRUD de Investimentos</h3><p>Aplicação para registrar ativos, consultar uma carteira e consolidar patrimônio sobre um modelo relacional em Oracle.</p><div class="project-details compact"><div><span>SOLUÇÃO</span><p>Flask, JavaScript, Oracle SQL, variáveis de ambiente e procedures.</p></div><div><span>RESULTADO</span><p>Estrutura organizada, respostas seguras e dados sintéticos para demonstração.</p></div></div><ul class="tags"><li>Python</li><li>Flask</li><li>Oracle</li><li>JavaScript</li></ul><a class="project-link" href="https://github.com/TiagoSou1/CRUD-INVESTIMENTOS" target="_blank" rel="noreferrer">Ver repositório <span>↗</span></a></div></article>
+          </div>
+          <aside class="github-callout glass"><div><span>OPEN SOURCE / GITHUB</span><p><strong>Quer investigar a implementação?</strong> Os repositórios incluem código, documentação e instruções de execução.</p></div><a href="https://github.com/TiagoSou1" target="_blank" rel="noreferrer">Abrir GitHub <span>↗</span></a></aside>
+        </div></section>
 
-        <section id="habilidades">
-            <h2>Habilidades</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Linguagens & Frameworks</h3>
-                    <div>
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">SQL</span>
-                        <span class="skill-item">Pandas</span>
-                        <span class="skill-item">NumPy</span>
-                        <span class="skill-item">Matplotlib</span>
-                        <span class="skill-item">Seaborn</span>
-                    </div>
-                </div>
+        <section id="stack" class="section section-alt"><div class="container reveal">
+          <header class="section-heading wide"><p class="section-kicker">Stack <span>04</span></p><h2>Tecnologia organizada pelo papel que desempenha.</h2><p>Uma base em expansão, com foco nas ferramentas que já uso em trabalho, estudo e projetos.</p></header>
+          <div class="stack-grid"><article class="stack-card glass"><header><span>01</span><i></i></header><h3>Analytics & BI</h3><p>Da organização da base à comunicação executiva.</p><ul><li>Power BI</li><li>Excel</li><li>Visualização de Dados</li><li>Business Intelligence</li></ul></article><article class="stack-card glass"><header><span>02</span><i></i></header><h3>Programação & Dados</h3><p>Ferramentas para explorar, tratar e integrar dados.</p><ul><li>Python</li><li>SQL</li><li>Pandas</li><li>ETL</li><li>APIs</li></ul></article><article class="stack-card glass"><header><span>03</span><i></i></header><h3>Data Science</h3><p>Métodos para compreender padrões e construir previsões.</p><ul><li>Estatística</li><li>Machine Learning</li><li>Forecasting</li><li>NLP</li><li>Classificação</li></ul></article><article class="stack-card glass"><header><span>04</span><i></i></header><h3>Data Management</h3><p>Estrutura, qualidade e rastreabilidade da informação.</p><ul><li>Governança de Dados</li><li>Modelagem</li><li>Oracle</li><li>Git & GitHub</li></ul></article></div>
+        </div></section>
 
-                <div class="skill-category">
-                    <h3>Ferramentas & Tecnologias</h3>
-                    <div>
-                        <span class="skill-item">Git & GitHub</span>
-                        <span class="skill-item">Jupyter Notebook</span>
-                        <span class="skill-item">Google Colab</span>
-                        <span class="skill-item">Oracle Database</span>
-                        <span class="skill-item">Power BI</span>
-                    </div>
-                </div>
+        <section id="formacao" class="section"><div class="container reveal">
+          <header class="section-heading wide"><p class="section-kicker">Formação <span>05</span></p><h2>Aprendizado contínuo, prática constante.</h2></header>
+          <div class="education-grid"><div class="timeline glass"><article><i></i><span>2025 — 2026</span><h3>Tecnólogo em Ciência de Dados</h3><strong>FIAP</strong><p>Estatística, programação, análise de dados, Machine Learning, bancos de dados, Big Data, visualização e nuvem.</p></article><article><i></i><span>2026 — 2027</span><h3>Programa de Aprendizagem Profissional</h3><strong>Espro</strong><p>Competências corporativas, comunicação, tecnologia, inovação, sustentabilidade e resolução de problemas.</p></article></div><div class="certifications glass"><header><span>CERTIFICATIONS.LOG</span><small>05 itens</small></header><ol><li><span>01</span><div><h3>People Analytics</h3><p>Alura · 2026</p></div></li><li><span>02</span><div><h3>Modelagem, Programação e Qualidade de Dados · Gold</h3><p>FIAP</p></div></li><li><span>03</span><div><h3>Arquitetura de Analytics e Big Data · Gold</h3><p>FIAP</p></div></li><li><span>04</span><div><h3>Estatística com Python</h3><p>Alura · 2025</p></div></li><li><span>05</span><div><h3>NoSQL</h3><p>FIAP · 2025</p></div></li></ol><a href="https://www.linkedin.com/in/tiago-sousa-leite/details/certifications/" target="_blank" rel="noreferrer">Validar no LinkedIn <span>↗</span></a></div></div>
+        </div></section>
 
-                <div class="skill-category">
-                    <h3>Competências</h3>
-                    <div>
-                        <span class="skill-item">Machine Learning</span>
-                        <span class="skill-item">Análise de Dados</span>
-                        <span class="skill-item">Visualização de Dados</span>
-                        <span class="skill-item">Processamento de Linguagem Natural</span>
-                        <span class="skill-item">Modelagem Preditiva</span>
-                    </div>
-                </div>
+        <section id="contato" class="contact-section"><div class="contact-orbit" aria-hidden="true"></div><div class="container contact-grid reveal"><div><p class="section-kicker">Contato <span>06</span></p><h2>Vamos transformar uma boa pergunta em uma decisão melhor?</h2><p>Estou construindo minha trajetória em Analytics e Ciência de Dados com experiência corporativa, estudo contínuo e projetos aplicados.</p></div><div class="contact-links glass"><a href="mailto:tsousal177@gmail.com"><span>01 · E-MAIL</span><strong>tsousal177@gmail.com</strong><b>↗</b></a><a href="https://www.linkedin.com/in/tiago-sousa-leite/" target="_blank" rel="noreferrer"><span>02 · LINKEDIN</span><strong>/in/tiago-sousa-leite</strong><b>↗</b></a><a href="https://github.com/TiagoSou1" target="_blank" rel="noreferrer"><span>03 · GITHUB</span><strong>@TiagoSou1</strong><b>↗</b></a></div></div></section>
+      </div>
+    </main>
 
-                <div class="skill-category">
-                    <h3>Idiomas</h3>
-                    <div>
-                        <span class="skill-item">Português - Nativo</span>
-                        <span class="skill-item">Inglês - Básico (A2)</span>
-                        <span class="skill-item">Espanhol - Intermediário (B1)</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="formacao">
-            <h2>Formação & Cursos</h2>
-            <div class="education-item">
-                <h3>FIAP – Centro Universitário</h3>
-                <div class="year">2024 - 2026</div>
-                <p>Tecnólogo em Ciência de Dados</p>
-                <p>Conclusão prevista: Dezembro de 2026</p>
-            </div>
-
-            <div class="education-item">
-                <h3>Cursos Complementares</h3>
-                <ul style="list-style: none; padding-left: 0;">
-                    <li style="margin: 0.5rem 0;"> Lógica de Programação – DIO</li>
-                    <li style="margin: 0.5rem 0;"> Estatística com Python – Alura</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="contato">
-            <h2>Entre em Contato</h2>
-            <div class="contact-info">
-                <p> Perus, São Paulo – SP</p>
-                <p> (11) 95880-9997</p>
-                <p>
-                    <a href="mailto:tsousal177@email.com"> tsousal177@email.com</a>
-                </p>
-                <p style="margin-top: 2rem;">
-                    <a href="https://www.linkedin.com/in/tiago-sousa-leite" target="_blank">LinkedIn</a> | 
-                    <a href="https://github.com/tiagosousaleite" target="_blank">GitHub</a>
-                </p>
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 Tiago Sousa Leite. Todos os direitos reservados.</p>
-    </footer>
-
-    <script>
-        // Smooth scrolling para os links de navegação
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Animação ao scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(20px)';
-            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(section);
-        });
-    </script>
-</body>
+    <footer><div class="container footer-grid"><p>© <span data-year></span> Tiago Sousa Leite</p><p>PEOPLE · DATA · DIRECTION</p><a href="#inicio">Voltar ao início ↑</a></div></footer>
+    <script src="app.js" defer></script>
+  </body>
 </html>

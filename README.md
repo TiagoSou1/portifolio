@@ -1,2 +1,16 @@
-# portifolio
-Meu Portifolio, onde me apresento.
+# Portfólio — Tiago Sousa Leite
+
+Portfólio profissional de Tiago Sousa Leite, com foco em People Analytics, Data Analytics e Ciência de Dados.
+
+## Destaques
+
+- Experiência interativa com visualização 3D em Canvas e efeitos de vidro.
+- Layout responsivo, acessível e sem dependências de JavaScript externas.
+- Projetos de forecasting, NLP e aplicação com banco de dados.
+- Metadados sociais, dados estruturados e configuração pronta para Netlify.
+
+## Publicação
+
+O conteúdo estático fica em `portifolio-tiago/`. A Netlify usa essa pasta como diretório de publicação, conforme o arquivo `netlify.toml`.
+
+Site: https://portifolio-tiago-sousa.netlify.app/
