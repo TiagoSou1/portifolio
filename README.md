@@ -13,4 +13,4 @@ Portfólio profissional de Tiago Sousa Leite, com foco em People Analytics, Data
 
 O conteúdo estático fica em `portifolio-tiago/`. A Netlify usa essa pasta como diretório de publicação, conforme o arquivo `netlify.toml`.
 
-Site: https://portifolio-tiago-sousa.netlify.app/
+Site: https://tiago-sousa-data.netlify.app/
