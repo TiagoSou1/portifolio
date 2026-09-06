@@ -6,6 +6,7 @@
   const menuButton = document.querySelector('[data-menu-button]');
   const mobileNav = document.querySelector('[data-mobile-nav]');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const menuLabel = (key, fallback) => window.portfolioI18n?.message(key) || fallback;
 
   document.querySelector('[data-year]').textContent = new Date().getFullYear();
 
@@ -28,7 +29,7 @@
 
   const closeMenu = () => {
     menuButton?.setAttribute('aria-expanded', 'false');
-    menuButton?.setAttribute('aria-label', 'Abrir menu');
+    menuButton?.setAttribute('aria-label', menuLabel('openMenu', 'Abrir menu'));
     mobileNav?.classList.remove('open');
     document.body.classList.remove('menu-open');
   };
@@ -36,7 +37,7 @@
   menuButton?.addEventListener('click', () => {
     const open = menuButton.getAttribute('aria-expanded') === 'true';
     menuButton.setAttribute('aria-expanded', String(!open));
-    menuButton.setAttribute('aria-label', open ? 'Abrir menu' : 'Fechar menu');
+    menuButton.setAttribute('aria-label', open ? menuLabel('openMenu', 'Abrir menu') : menuLabel('closeMenu', 'Fechar menu'));
     mobileNav?.classList.toggle('open', !open);
     document.body.classList.toggle('menu-open', !open);
   });

@@ -49,6 +49,18 @@
         <nav class="desktop-nav" aria-label="Navegação principal">
           <a href="#sobre">Sobre</a><a href="#experiencia">Experiência</a><a href="#projetos">Projetos</a><a href="#stack">Stack</a><a href="#formacao">Formação</a>
         </nav>
+        <div class="language-switcher" data-language-switcher>
+          <button class="language-trigger" type="button" aria-label="Selecionar idioma" aria-haspopup="menu" aria-expanded="false" data-language-trigger>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9S14.5 18.3 12 21M12 3C9.5 5.7 8.2 8.7 8.2 12s1.3 6.3 3.8 9"></path></svg>
+            <span data-current-language>PT</span>
+            <i aria-hidden="true"></i>
+          </button>
+          <div class="language-menu glass" role="menu" aria-label="Idiomas disponíveis" data-language-menu>
+            <button type="button" role="menuitemradio" aria-checked="true" data-language="pt"><span>PT</span><strong>Português</strong><i aria-hidden="true">✓</i></button>
+            <button type="button" role="menuitemradio" aria-checked="false" data-language="en"><span>EN</span><strong>English</strong><i aria-hidden="true">✓</i></button>
+            <button type="button" role="menuitemradio" aria-checked="false" data-language="es"><span>ES</span><strong>Español</strong><i aria-hidden="true">✓</i></button>
+          </div>
+        </div>
         <a class="nav-cta" href="#contato">Contato <span>↗</span></a>
         <button class="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-button><span></span><span></span></button>
       </div>
@@ -128,6 +140,7 @@
     </main>
 
     <footer><div class="container footer-grid"><p>© <span data-year></span> Tiago Sousa Leite</p><p>PEOPLE · DATA · DIRECTION</p><a href="#inicio">Voltar ao início ↑</a></div></footer>
+    <script src="i18n.js" defer></script>
     <script src="app.js" defer></script>
   </body>
 </html>
